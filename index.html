@@ -1,0 +1,202 @@
+<!doctype html>
+<html lang="ro">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<meta name="description" content="Ginger Shot by Rozmarin: două rețete simple, ingredientele și cum se păstrează.">
+<meta name="theme-color" content="#5E7153">
+<meta property="og:title" content="Ginger Shot by Rozmarin">
+<meta property="og:description" content="Două rețete simple pentru sticla de 100 ml.">
+<meta property="og:type" content="website">
+<link rel="icon" href="monogram.png">
+<title>Ginger Shot Rozmarin</title>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Jost:wght@400;500;600&family=Spectral:ital,wght@0,400;0,600;1,400&display=swap">
+<style>
+/* Одна колонка, читается с телефона у барной стойки: зелёная шапка,
+   два рецепта карточками, дальше справка и подвал. */
+:root{
+  --verde:#5E7153;        /* фон этикетки */
+  --verde-adanc:#3F4E37;  /* тёмный акцент */
+  --crema:#F0ECE0;        /* кремовый с этикетки */
+  --hartie:#FBF8F0;       /* бумага страницы */
+  --cerneala:#2C3326;     /* основной текст */
+  --cerneala-moale:#5E6655;
+  --lamaie:#D8A32B;       /* лимонная цедра — единственный яркий акцент */
+  --linie:#D8D3C2;
+  --card:#FFFFFF;
+  --display:'Jost','Futura','Avenir Next',sans-serif;
+  --body:'Spectral',Georgia,serif;
+}
+@media (prefers-color-scheme: dark){
+  :root:not([data-theme="light"]){
+    --verde:#3F4E37; --verde-adanc:#2A3324; --crema:#EFEADC;
+    --hartie:#1C211A; --cerneala:#E8E3D4; --cerneala-moale:#A9B09C;
+    --lamaie:#E8BC55; --linie:#3A4234; --card:#262D22;
+    color-scheme:dark;
+  }
+}
+:root[data-theme="dark"]{
+  --verde:#3F4E37; --verde-adanc:#2A3324; --crema:#EFEADC;
+  --hartie:#1C211A; --cerneala:#E8E3D4; --cerneala-moale:#A9B09C;
+  --lamaie:#E8BC55; --linie:#3A4234; --card:#262D22;
+  color-scheme:dark;
+}
+*{box-sizing:border-box}
+img{max-width:100%}
+body{
+  margin:0; background:var(--hartie); color:var(--cerneala);
+  font-family:var(--body); font-size:17px; line-height:1.65;
+  -webkit-font-smoothing:antialiased;
+}
+.banda{background:var(--verde); color:var(--crema)}
+.inner{
+  max-width:34rem; margin-inline:auto;
+  padding-left:max(16px,env(safe-area-inset-left,0px));
+  padding-right:max(16px,env(safe-area-inset-right,0px));
+}
+header .inner{padding-block:2.5rem 2.75rem; text-align:center}
+.logo{display:block; width:min(9rem,42%); height:auto; margin:0 auto 1.5rem}
+h1{
+  font-family:var(--display); font-weight:600; font-size:clamp(2rem,9vw,2.6rem);
+  letter-spacing:.04em; text-transform:uppercase; line-height:1.05;
+  margin:0 0 .75rem; text-wrap:balance;
+}
+.sub{font-size:1rem; margin:0; color:var(--crema); opacity:.9}
+.logo-mic{width:3.25rem; margin-bottom:.25rem}
+.pastile{
+  display:flex; flex-wrap:wrap; justify-content:center; gap:.5rem; margin:1.5rem 0 0;
+  padding:0; list-style:none;
+}
+.pastile li{
+  font-family:var(--display); font-size:.78rem; font-weight:500; letter-spacing:.1em;
+  text-transform:uppercase; border:1px solid rgba(240,236,224,.45);
+  border-radius:999px; padding:.4rem .85rem;
+}
+main .inner{padding-block:2.5rem}
+h2{
+  font-family:var(--display); font-weight:600; font-size:1.45rem; letter-spacing:.02em;
+  margin:0 0 .35rem; text-wrap:balance;
+}
+.sectiune{margin-bottom:3rem}
+.sectiune:last-child{margin-bottom:0}
+.lead{color:var(--cerneala-moale); margin:0 0 1.5rem; font-size:1rem}
+.retete{display:grid; gap:1.25rem}
+.reteta{
+  background:var(--card); border:1px solid var(--linie); border-radius:4px;
+  padding:1.5rem 1.4rem 1.4rem; position:relative;
+}
+.reteta h3{
+  font-family:var(--display); font-weight:600; font-size:1.15rem;
+  letter-spacing:.14em; text-transform:uppercase; margin:0 0 1rem; color:var(--cerneala);
+}
+.reteta h3::after{
+  content:""; display:block; width:2.25rem; height:2px; background:var(--lamaie);
+  margin-top:.6rem;
+}
+.ingrediente{list-style:none; margin:0 0 1.1rem; padding:0; display:grid; gap:.45rem}
+.ingrediente li{display:flex; gap:.9rem; align-items:baseline; min-width:0}
+.cant{
+  font-family:var(--display); font-weight:600; font-variant-numeric:tabular-nums;
+  color:var(--verde); white-space:nowrap; min-width:5.5rem; font-size:.95rem;
+  letter-spacing:.02em;
+}
+@media (prefers-color-scheme: dark){
+  :root:not([data-theme="light"]) .cant{color:var(--lamaie)}
+}
+:root[data-theme="dark"] .cant{color:var(--lamaie)}
+.ce-iese{margin:0; font-style:italic; color:var(--cerneala-moale); font-size:.95rem}
+.nota{
+  font-family:var(--display); font-size:.8rem; letter-spacing:.14em; text-transform:uppercase;
+  color:var(--cerneala-moale); text-align:center; margin:1.25rem 0 0;
+}
+.de-ce{border-top:1px solid var(--linie); border-bottom:1px solid var(--linie); padding-block:1.75rem}
+.de-ce p{margin:0 0 .85rem}
+.de-ce p:last-child{margin-bottom:0}
+footer .inner{padding-block:2.25rem; text-align:center}
+footer p{margin:0 0 .75rem}
+footer .adresa{
+  font-family:var(--display); font-size:.85rem; letter-spacing:.1em; text-transform:uppercase;
+  opacity:.8; margin:1.25rem 0 0; line-height:1.9;
+}
+footer a{color:inherit}
+@media (min-width:34rem){
+  .retete{grid-template-columns:1fr 1fr}
+}
+</style>
+</head>
+<body>
+
+<header class="banda">
+  <div class="inner">
+    <img class="logo" src="monogram.png" width="440" height="464" alt="Rozmarin">
+    <h1>Ginger Shot</h1>
+    <p class="sub">100&nbsp;ml · ghimbir &amp; lămâie · 4 porții</p>
+    <ul class="pastile">
+      <li>Doar 2 ingrediente</li>
+      <li>Fără zahăr adăugat</li>
+      <li>Fără conservanți adăugați</li>
+    </ul>
+  </div>
+</header>
+
+<main>
+  <div class="inner">
+    <section class="sectiune">
+      <h2>Cum îl savurezi?</h2>
+      <p class="lead">Sticla de 100&nbsp;ml se bea în 4 reprize, câte 25&nbsp;ml. Rece sau cald — amândouă merg.</p>
+
+      <div class="retete">
+        <article class="reteta">
+          <h3>Ginger Lemonade</h3>
+          <ul class="ingrediente">
+            <li><span class="cant">25 ml</span><span>Ginger Shot</span></li>
+            <li><span class="cant">150–200 ml</span><span>apă minerală carbogazoasă</span></li>
+            <li><span class="cant">după gust</span><span>gheață</span></li>
+          </ul>
+          <p class="ce-iese">O limonadă răcoritoare, cu gust intens de ghimbir și lămâie.</p>
+        </article>
+
+        <article class="reteta">
+          <h3>Ginger Tea</h3>
+          <ul class="ingrediente">
+            <li><span class="cant">25 ml</span><span>Ginger Shot</span></li>
+            <li><span class="cant">150–200 ml</span><span>apă fierbinte, nu clocotită</span></li>
+          </ul>
+          <p class="ce-iese">O băutură caldă, citrică și reconfortantă.</p>
+        </article>
+      </div>
+
+      <p class="nota">4 porții dintr-o singură sticlă</p>
+    </section>
+
+    <section class="sectiune de-ce">
+      <h2>De ce ghimbir și lămâie?</h2>
+      <p>Ghimbirul proaspăt conține gingeroli — compușii care îi dau gustul iute și aroma caldă. Lămâia stoarsă pe loc aduce prospețime, aciditate și vitamina C.</p>
+      <p>Atât. Nimic altceva nu intră în sticlă: fără apă, fără sirop, fără îndulcitori.</p>
+    </section>
+
+    <section class="sectiune">
+      <h2>Povestea Rozmarin</h2>
+      <p>Din 2016, Rozmarin Café înseamnă gust autentic, ingrediente atent alese și respect pentru mâncarea bună.</p>
+    </section>
+
+    <section class="sectiune">
+      <h2>A se păstra la rece</h2>
+      <p class="lead" style="margin-bottom:0">Sucul este crud și nepasteurizat. Ține-l la frigider și consumă-l în 7 zile de la îmbuteliere. Agită bine înainte de a turna — ghimbirul se așază.</p>
+    </section>
+  </div>
+</main>
+
+<footer class="banda">
+  <div class="inner">
+    <img class="logo logo-mic" src="monogram.png" width="440" height="464" alt="Rozmarin">
+    <p class="adresa">
+      Ana Sitnic S.R.L.<br>
+      bd. Ștefan cel Mare 202, Chișinău<br>
+      068 023 330
+    </p>
+  </div>
+</footer>
+
+</body>
+</html>
