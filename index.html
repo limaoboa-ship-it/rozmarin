@@ -72,6 +72,14 @@ h1{
   text-transform:uppercase; border:1px solid rgba(240,236,224,.45);
   border-radius:999px; padding:.4rem .85rem;
 }
+.lot{
+  margin:1.5rem 0 0; display:inline-flex; flex-wrap:wrap; justify-content:center;
+  gap:.35rem 1.1rem; font-family:var(--display); font-size:.82rem; letter-spacing:.06em;
+  border-top:1px solid rgba(240,236,224,.35); padding-top:1.1rem;
+}
+.lot b{font-weight:500; opacity:.75; text-transform:uppercase; letter-spacing:.12em;
+  font-size:.74rem; margin-right:.35rem}
+.lot span{white-space:nowrap; font-variant-numeric:tabular-nums}
 main .inner{padding-block:2.5rem}
 h2{
   font-family:var(--display); font-weight:600; font-size:1.45rem; letter-spacing:.02em;
@@ -136,6 +144,12 @@ footer a{color:inherit}
       <li>Fără zahăr adăugat</li>
       <li>Fără conservanți adăugați</li>
     </ul>
+    <!-- Дата розлива партии. Менять при каждом новом розливе:
+         срок годности = дата розлива + 7 дней. -->
+    <p class="lot">
+      <span><b>Îmbuteliat</b>11.11.2026</span>
+      <span><b>Valabil până la</b>18.11.2026</span>
+    </p>
   </div>
 </header>
 
@@ -182,7 +196,7 @@ footer a{color:inherit}
 
     <section class="sectiune">
       <h2>A se păstra la rece</h2>
-      <p class="lead" style="margin-bottom:0">Sucul este crud și nepasteurizat. Ține-l la frigider și consumă-l în 7 zile de la îmbuteliere. Agită bine înainte de a turna — ghimbirul se așază.</p>
+      <p class="lead" style="margin-bottom:0">Sucul este crud și nepasteurizat. Ține-l la frigider și consumă-l în 7 zile de la îmbuteliere — data este indicată mai sus. Agită bine înainte de a turna — ghimbirul se așază.</p>
     </section>
   </div>
 </main>
